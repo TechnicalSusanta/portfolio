@@ -1,561 +1,958 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Susanta Gorai | Robotics & Embedded Systems Engineer</title>
-    <meta name="description" content="Portfolio of Susanta Gorai - Robotics & Embedded Systems Engineer specializing in ROS, LiDAR SLAM, Computer Vision, Drones and PCB Design.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>user@susanta</title>
+    <meta name="description"
+        content="Portfolio of Susanta Gorai - Robotics & Autonomous Systems, Drone Engineer, Embedded & AI/ML Specialist" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-    <!-- ====== SEAMLESS GLOBAL AMBIENT BACKGROUND ====== -->
-    <div class="bg-ambient" aria-hidden="true">
-        <div class="glow glow-1"></div>
-        <div class="glow glow-2"></div>
-        <div class="glow glow-3"></div>
-        <div class="glow glow-4"></div>
+
+    <!-- ========================================================================
+       DESKTOP TERMINAL SHELL (>= 1035px)
+       ======================================================================== -->
+    <main id="desktop-shell">
+        <div class="outer-terminal-box">
+            <!-- Top floating user badge -->
+            <div class="top-user-badge">
+                <span class="text-pink">user</span><span class="text-cream">@</span><span
+                    class="text-peach">susanta</span><span class="text-cream">~</span>
+            </div>
+
+            <!-- Header bar with ls sections & tabs -->
+            <header class="desktop-header">
+                <div class="cmd-prompt-ls">
+                    <span class="text-pink">$</span> <span class="text-peach">ls</span> <span class="text-green">sections</span>
+                </div>
+                <nav class="tabs-navigation" aria-label="Sections">
+                    <button class="tab-btn active" data-tab="about"
+                        data-cmd='<span class="text-peach"><span class="text-pink">$</span>cat</span> <span class="text-cream">about.txt</span>'>about<span
+                            class="ext">.txt</span></button>
+                    <button class="tab-btn" data-tab="career"
+                        data-cmd='<span class="text-peach"><span class="text-pink">$</span>tail</span> <span class="text-green">-f</span> <span class="text-cream">career.log</span>'>career<span
+                            class="ext">.log</span></button>
+                    <button class="tab-btn" data-tab="skills"
+                        data-cmd='<span class="text-peach"><span class="text-pink">$</span>ls</span> <span class="text-green">-a</span> <span class="text-cream">skills</span>'>skills<span
+                            class="ext">.md</span></button>
+                    <button class="tab-btn" data-tab="projects"
+                        data-cmd='<span class="text-peach"><span class="text-pink">$</span>tar</span> <span class="text-green">-xvzf</span> <span class="text-cream">projects.tar.gz</span>'>projects<span
+                            class="ext">.md</span></button>
+                    <button class="tab-btn" data-tab="achievements"
+                        data-cmd='<span class="text-peach"><span class="text-pink">$</span>sudo</span> <span class="text-green">apt get</span> <span class="text-cream">achievements</span>'>achievements<span
+                            class="ext">.txt</span></button>
+                    <button class="tab-btn" data-tab="contact"
+                        data-cmd='<span class="text-peach"><span class="text-pink">$</span>vi</span> <span class="text-cream">contact.yml</span>'>contact<span
+                            class="ext">.yml</span></button>
+                </nav>
+            </header>
+
+                        <!-- Inner Terminal Box -->
+                        <section class="inner-terminal-window">
+                            <div class="floating-command-tag" id="desktop-active-cmd">
+                                <span class="text-peach"><span class="text-pink">$</span>cat</span> <span
+                                    class="text-cream">about.txt</span>
+                            </div>
+
+                            <div class="content-viewport">
+                                <!-- Background scrolling pixel-line canvas -->
+                                <canvas id="lines-canvas" aria-hidden="true"></canvas>
+
+                                <!-- TAB 1: ABOUT.TXT -->
+                                <article class="section-view active" id="view-about">
+                                    <div class="about-grid">
+                                        <!-- Avatar column -->
+                                        <div class="about-avatar-column">
+                                            <div class="avatar-frame">
+                                                <img id="avatar-img" src="Susanta.gif"
+                                                    alt="Susanta Gorai - Robotics Engineer" />
+                                                <button class="avatar-switch-btn" id="avatar-toggle-btn"
+                                                    title="Switch between Susanta.gif and Real Photo">Click Me!</button>
+                                            </div>
+                                            <div class="avatar-name-badge">SUSANTA</div>
+                                        </div>
+
+                                        <!-- Info column -->
+                                        <div class="about-info-column scrollbar-white">
+                                            <!-- Contribution Matrix -->
+                                            <div class="contrib-container">
+                                                <div class="contrib-header">
+                                                    <span>.contrib_grid</span>
+                                                    <span id="contrib-stat-txt" class="text-peach">482 commits in the
+                                                        last
+                                                        year</span>
+                                                </div>
+                                                <div class="contrib-matrix" id="contrib-grid-desktop">
+                                                    <!-- Injected dynamically via JS -->
+                                                </div>
+                                                <div class="contrib-progress-track">
+                                                    <div class="contrib-progress-fill"></div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Neofetch System Information -->
+                                            <div class="neofetch-table">
+                                                <div class="neofetch-row">
+                                                    <span class="neofetch-key">host:</span>
+                                                    <span class="neofetch-val font-semibold">Susanta Gorai</span>
+                                                </div>
+                                                <div class="neofetch-row">
+                                                    <span class="neofetch-key">uptime:</span>
+                                                    <span class="neofetch-val" id="live-uptime-val">21<span
+                                                            class="text-pink">y</span> 5<span class="text-pink">m</span>
+                                                        6<span class="text-pink">d</span></span>
+                                                </div>
+                                                <div class="neofetch-row">
+                                                    <span class="neofetch-key">working_directory:</span>
+                                                    <span class="neofetch-val"> India / WestBengal / Asansol</span>
+                                                </div>
+                                                <div class="neofetch-row">
+                                                    <span class="neofetch-key">major:</span>
+                                                    <span class="neofetch-val">Computer Science &amp; Engineering</span>
+                                                </div>
+                                                <div class="neofetch-row">
+                                                    <span class="neofetch-key">interests:</span>
+                                                    <span class="neofetch-val">Agentic AI / ML / Computer Vision /
+                                                        Robotics &
+                                                        Automation / ROS / SLAM / Embedded Systems</span>
+                                                </div>
+                                            </div>
+
+                                            <!-- data.json Window -->
+                                            <div class="data-json-window">
+                                                <div class="data-json-header">
+                                                    <span class="data-dot dot-red"></span>
+                                                    <span class="data-dot dot-yellow"></span>
+                                                    <span class="data-dot dot-green"></span>
+                                                    <span style="margin-left: 0.4rem;">data.json</span>
+                                                </div>
+                                                <pre class="json-code">[
+  {
+    <span class="text-peach">"cv"</span>: [<a href="Susanta_GoraiResume.pdf" target="_blank" class="json-link">"view"</a>, <a href="Susanta_GoraiResume.pdf" download="Susanta_GoraiResume.pdf" class="json-link">"download"</a>],
+    <span class="text-peach">"links"</span>: [<a href="https://github.com/TechnicalSusanta" target="_blank" class="json-link">"github"</a>, <a href="https://www.linkedin.com/in/susanta-gorai-1ab300218/" target="_blank" class="json-link">"linkedin"</a>],
+    <span class="text-peach">"direct"</span>: [<a href="mailto:susantagorai037@gmail.com" class="json-link">"mail"</a>, <a href="tel:+917548090165" class="json-link">"phone"</a>],
+    <span class="text-peach">"focus"</span>: [<a href="#projects" class="json-link nav-shortcut" data-target="projects">"AI/ML"</a>, <a href="#projects" class="json-link nav-shortcut" data-target="projects">"Computer Vision"</a>, <a href="#projects" class="json-link nav-shortcut" data-target="projects">"Robotics & Automation"</a>]
+  }
+]</pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <!-- TAB 2: CAREER.LOG -->
+                                <article class="section-view" id="view-career">
+                                    <div class="split-view-container">
+                                        <!-- Left: Experience timeline -->
+                                        <div class="split-left-col scrollbar-white">
+                                            <div class="retro-card">
+                                                <div class="card-header-row">
+                                                    <div>
+                                                        <h3 class="card-title">Technical Exposure &amp; Research</h3>
+                                                        <p class="card-org">CSIR - Central Mechanical Engineering
+                                                            Research Institute
+                                                            (CSIR-CMERI)</p>
+                                                    </div>
+                                                    <span class="card-meta">Durgapur, India</span>
+                                                </div>
+                                                <ul class="card-bullets">
+                                                    <li>Conducted hands-on development on innovative robotics and
+                                                        embedded systems
+                                                        projects.</li>
+                                                    <li>Specialized in Robot Operating System (ROS) integration and
+                                                        autonomous
+                                                        control algorithms.</li>
+                                                    <li>Contributed to Underwater Autonomous Vehicles (AUV) and Remotely
+                                                        Operated
+                                                        Vehicles (ROV).</li>
+                                                    <li>Calibrated multi-sensor telemetry, IMU filtering and real-time
+                                                        microcontroller communication.</li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="retro-card">
+                                                <div class="card-header-row">
+                                                    <div>
+                                                        <h3 class="card-title">Robotics Instructor</h3>
+                                                        <p class="card-org">Asansol Ramakrishna Mission School</p>
+                                                    </div>
+                                                    <span class="card-meta">Asansol, West Bengal</span>
+                                                </div>
+                                                <ul class="card-bullets">
+                                                    <li>Led comprehensive robotics systems training programs for 150+
+                                                        students.</li>
+                                                    <li>Designed hands-on hardware curriculum covering microcontrollers,
+                                                        sensor
+                                                        interfacing and motor drivers.</li>
+                                                    <li>Mentored student engineering teams for technical competitions
+                                                        and STEM
+                                                        innovation exhibitions.</li>
+                                                    <li>Fostered practical problem-solving using Arduino, ESP32 and
+                                                        basic
+                                                        autonomous algorithms.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <!-- Right: Education -->
+                                        <div class="split-right-col scrollbar-white">
+                                            <div class="retro-card" style="height: 100%;">
+                                                <div class="card-header-row">
+                                                    <div>
+                                                        <h3 class="card-title text-teal">B.Tech - Computer Science
+                                                            Engineering</h3>
+                                                        <p class="card-org">Durgapur Institute of Advanced Technology
+                                                            &amp;
+                                                            Management</p>
+                                                    </div>
+                                                    <span class="card-meta text-peach">2023 - 2027</span>
+                                                </div>
+                                                <p
+                                                    style="font-size: 0.85rem; color: var(--accent-green); margin: 0.6rem 0; font-weight: 600;">
+                                                    Academic Standing: CGPA 7.20 (Ongoing)
+                                                </p>
+                                                <p
+                                                    style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.8rem;">
+                                                    Location: Rajbandh, Durgapur, West Bengal
+                                                </p>
+                                                <div
+                                                    style="font-size: 0.83rem; line-height: 1.6; border-top: 1px solid var(--border-color); padding-top: 0.6rem;">
+                                                    <span class="text-peach font-semibold">Core Coursework:</span>
+                                                    <ul class="card-bullets" style="margin-top: 0.4rem;">
+                                                        <li>Data Structures &amp; Algorithms (DSA)</li>
+                                                        <li>Computer Networks &amp; Protocols</li>
+                                                        <li>Operating Systems &amp; Real-Time Systems</li>
+                                                        <li>Digital &amp; Analog Electronics / Microprocessors</li>
+                                                    </ul>
+                                                </div>
+                                                <div
+                                                    style="margin-top: 1rem; padding-top: 0.6rem; border-top: 1px solid var(--border-color); font-size: 0.83rem;">
+                                                    <span class="text-pink font-semibold">Specialized Focus:</span>
+                                                    <p
+                                                        style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.3rem;">
+                                                        Agentic AI, Computer Vision, Autonomous Navigation, LiDAR SLAM,
+                                                        Drone Flight
+                                                        Dynamics and PCB Design, 3D Modeling.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <!-- TAB 3: SKILLS.MD -->
+                                <article class="section-view" id="view-skills">
+                                    <div class="skills-container">
+                                        <!-- Left: Robot Mascot -->
+                                        <div class="skills-mascot-col">
+                                            <div class="skills-mascot-frame">
+                                                <img src="pixel_robot.jpg" alt="Autonomous Robotics Mascot" />
+                                            </div>
+                                            <div
+                                                style="font-size: 0.8rem; color: var(--accent-teal); text-align: center;">
+                                                <span class="text-pink">&gt;</span> robotic_agent_v2.0<br />
+                                                <span class="text-muted" style="font-size: 0.72rem;">[status: autonomous
+                                                    //
+                                                    ready]</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Right: Tree View of Tech Stack -->
+                                        <div class="skills-tree-col scrollbar-white">
+                                            <div class="tree-section-title">
+                                                <span>./tech_stack</span>
+                                                <div class="tree-title-line"></div>
+                                            </div>
+
+                                            <div class="skills-tree-columns">
+                                                <!-- Col 1 -->
+                                                <div>
+                                                    <div class="tree-category">
+                                                        <div class="tree-cat-label">languages</div>
+                                                        <div class="tree-item">Python</div>
+                                                        <div class="tree-item">C / C++</div>
+                                                        <div class="tree-item">Bash / Shell</div>
+                                                        <div class="tree-item">SQL (MySQL)</div>
+                                                        <div class="tree-item">JavaScript (ES6+)</div>
+                                                    </div>
+
+                                                    <div class="tree-category">
+                                                        <div class="tree-cat-label">robotics_&amp;_embedded</div>
+                                                        <div class="tree-item">ROS / ROS 2</div>
+                                                        <div class="tree-item">ESP32 / Arduino / STM32 / Teensy</div>
+                                                        <div class="tree-item">Raspberry Pi &amp; Jetson</div>
+                                                        <div class="tree-item">PX4 / ArduPilot Flight Controllers</div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Col 2 -->
+                                                <div>
+                                                    <div class="tree-category">
+                                                        <div class="tree-cat-label">perception_&amp;_ai</div>
+                                                        <div class="tree-item">OpenCV &amp; MediaPipe</div>
+                                                        <div class="tree-item">2D / 3D LiDAR SLAM</div>
+                                                        <div class="tree-item">AprilTag Visual Localization</div>
+                                                        <div class="tree-item">TensorFlow &amp; PyTorch</div>
+                                                    </div>
+
+                                                    <div class="tree-category">
+                                                        <div class="tree-cat-label">hardware_&amp;_cad</div>
+                                                        <div class="tree-item">Custom PCB Design (EasyEDA)</div>
+                                                        <div class="tree-item">SolidWorks 3D Modeling</div>
+                                                        <div class="tree-item">Sensor Fusion &amp; Telemetry</div>
+                                                        <div class="tree-item">MQTT / IoT Architecture</div>
+                                                    </div>
+
+                                                    <div class="tree-category">
+                                                        <div class="tree-cat-label">operating_systems_&amp;_tools</div>
+                                                        <div class="tree-item">Ubuntu / Linux CLI</div>
+                                                        <div class="tree-item">Git &amp; GitHub Version Control</div>
+                                                        <div class="tree-item">PlatformIO / VSCode</div>
+                                                        <div class="tree-item">Django / Web API Integration</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <!-- TAB 4: PROJECTS.MD -->
+                                <article class="section-view" id="view-projects">
+                                    <div class="projects-container">
+                                        <!-- Left: Project distribution chart & stats -->
+                                        <div class="projects-stats-col">
+                                            <div class="chart-wrapper">
+                                                <!-- SVG Donut Chart generated dynamically -->
+                                                <svg id="projects-pie-chart" viewBox="-1 -1 2 2"
+                                                    style="transform: rotate(-90deg); width: 100%; height: 100%;">
+                                                    <!-- Segments rendered in script.js -->
+                                                </svg>
+                                            </div>
+
+                                            <div class="chart-legend" id="projects-chart-legend">
+                                                <!-- Injected via script.js -->
+                                            </div>
+
+                                            <div class="stats-table">
+                                                <div class="stats-row">
+                                                    <span>major_projects :</span>
+                                                    <span>7+</span>
+                                                </div>
+                                                <div class="stats-row">
+                                                    <span>awards_won :</span>
+                                                    <span>6+</span>
+                                                </div>
+                                                <div class="stats-row">
+                                                    <span>isro_qualifier :</span>
+                                                    <span>IRoC-U '26</span>
+                                                </div>
+                                                <div class="stats-row">
+                                                    <span>sih_winner :</span>
+                                                    <span>2024</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Right: Project Cards List -->
+                                        <div class="projects-list-col scrollbar-white">
+
+                                            <!-- Project 1 -->
+                                            <div class="project-card">
+                                                <div class="project-title-row">
+                                                    <h3 class="project-title">GPS-Less Drone Swarming, 3D Mapping &amp;
+                                                        Object
+                                                        Detection</h3>
+                                                    <span class="project-sub">drone autonomy &amp; slam</span>
+                                                </div>
+                                                <p class="project-desc">
+                                                    Autonomous multi-drone swarming system utilizing 3D LiDAR SLAM for
+                                                    real-time
+                                                    spatial mapping, localization and navigation in GPS-denied outdoor
+                                                    and
+                                                    underground environments. Integrated AprilTag visual fiducial
+                                                    detection for
+                                                    precision landing and swarm coordination, along with YOLO-based
+                                                    object
+                                                    detection.
+                                                </p>
+                                                <div class="project-tech-tags">
+                                                    <span class="tech-tag-badge">ROS</span>
+                                                    <span class="tech-tag-badge">3D LiDAR</span>
+                                                    <span class="tech-tag-badge">AprilTag</span>
+                                                    <span class="tech-tag-badge">C++</span>
+                                                    <span class="tech-tag-badge">Python</span>
+                                                    <span class="tech-tag-badge">PX4</span>
+                                                    <span class="tech-tag-badge">Easy EDA</span>
+                                                    <span class="tech-tag-badge">YOLO</span>
+                                                    <span class="tech-tag-badge">Scikit learn</span>
+                                                    <span class="tech-tag-badge">FastAPI</span>
+                                                    <span class="tech-tag-badge">OpenCV</span>
+                                                </div>
+                                                <div class="project-links-row">
+                                                    <a href="https://github.com/TechnicalSusanta" target="_blank"
+                                                        class="project-action-link live-btn"><i
+                                                            class="fas fa-satellite-dish"></i>
+                                                        live_demo</a>
+                                                    <a href="https://github.com/TechnicalSusanta" target="_blank"
+                                                        class="project-action-link"><i class="fab fa-github"></i>
+                                                        source_code</a>
+                                                </div>
+                                            </div>
+
+                                            <!-- Project 2 -->
+                                            <div class="project-card">
+                                                <div class="project-title-row">
+                                                    <h3 class="project-title">Drone Based Intelligent ET Sensing &amp;
+                                                        Irrigation
+                                                        System</h3>
+                                                    <span class="project-sub">precision agriculture</span>
+                                                </div>
+                                                <p class="project-desc">
+                                                    Drone-assisted evapotranspiration (ET) sensing system paired with
+                                                    wireless IoT
+                                                    ground sensor nodes. Automates precision water allocation commands
+                                                    based on
+                                                    real-time soil moisture and aerial canopy temperature measurements.
+                                                </p>
+                                                <div class="project-tech-tags">
+                                                    <span class="tech-tag-badge">Python</span>
+                                                    <span class="tech-tag-badge">IoT</span>
+                                                    <span class="tech-tag-badge">MQTT</span>
+                                                    <span class="tech-tag-badge">ESP32</span>
+                                                    <span class="tech-tag-badge">Sensors</span>
+                                                </div>
+                                                <div class="project-links-row">
+                                                    <a href="https://github.com/TechnicalSusanta" target="_blank"
+                                                        class="project-action-link"><i class="fab fa-github"></i>
+                                                        source_code</a>
+                                                </div>
+                                            </div>
+
+                                            <!-- Project 3 -->
+                                            <div class="project-card">
+                                                <div class="project-title-row">
+                                                    <h3 class="project-title">STM32 Flight Controller PCB</h3>
+                                                    <span class="project-sub">custom avionics hardware</span>
+                                                </div>
+                                                <p class="project-desc">
+                                                    Engineered a custom 4-layer flight controller PCB based on STM32 ARM
+                                                    Cortex
+                                                    microcontroller with integrated 6-axis IMU, barometer, telemetry
+                                                    transceivers,
+                                                    and regulated power distribution for autonomous quadcopters.
+                                                </p>
+                                                <div class="project-tech-tags">
+                                                    <span class="tech-tag-badge">STM32</span>
+                                                    <span class="tech-tag-badge">PCB Design</span>
+                                                    <span class="tech-tag-badge">Embedded C</span>
+                                                    <span class="tech-tag-badge">EasyEDA</span>
+                                                    <span class="tech-tag-badge">SPI/I2C</span>
+                                                </div>
+                                                <div class="project-links-row">
+                                                    <a href="https://github.com/TechnicalSusanta" target="_blank"
+                                                        class="project-action-link"><i class="fab fa-github"></i>
+                                                        source_code</a>
+                                                </div>
+                                            </div>
+
+                                            <!-- Project 4 -->
+                                            <div class="project-card">
+                                                <div class="project-title-row">
+                                                    <h3 class="project-title">LiDAR Autonomous Cleaning Robot</h3>
+                                                    <span class="project-sub">service robotics</span>
+                                                </div>
+                                                <p class="project-desc">
+                                                    Autonomous ground service robot powered by 2D LiDAR and wheel
+                                                    encoders running
+                                                    Hector SLAM. Features coverage path planning and ultrasonic sensor
+                                                    safety guards
+                                                    for thorough room sanitation without human intervention.
+                                                </p>
+                                                <div class="project-tech-tags">
+                                                    <span class="tech-tag-badge">ROS</span>
+                                                    <span class="tech-tag-badge">LiDAR</span>
+                                                    <span class="tech-tag-badge">SLAM</span>
+                                                    <span class="tech-tag-badge">Arduino</span>
+                                                    <span class="tech-tag-badge">Python</span>
+                                                </div>
+                                                <div class="project-links-row">
+                                                    <a href="https://github.com/TechnicalSusanta" target="_blank"
+                                                        class="project-action-link"><i class="fab fa-github"></i>
+                                                        source_code</a>
+                                                </div>
+                                            </div>
+
+                                            <!-- Project 5 -->
+                                            <!-- Project Flagship 1: AetherHome AI -->
+                                            <div class="project-card">
+                                                <div class="project-title-row">
+                                                    <h3 class="project-title">AetherHome AI - IoT Agentic Smart Home
+                                                        Automation</h3>
+                                                    <span class="project-sub">smart home // agentic ai + esp32</span>
+                                                </div>
+                                                <p class="project-desc">
+                                                    Autonomous smart home cognitive mesh running continuous OODA
+                                                    (Observe-Orient-Decide-Act) reasoning loops across 6 zones.
+                                                    Coordinates
+                                                    real-time comfort envelopes, dynamic peak electricity tariff
+                                                    shaving, solar PV
+                                                    &amp; battery storage dispatch, and multi-modal safety sentinels via
+                                                    ESP32
+                                                    FreeRTOS firmware &amp; MQTT TLS.
+                                                </p>
+                                                <div class="project-tech-tags">
+                                                    <span class="tech-tag-badge">Agentic AI</span>
+                                                    <span class="tech-tag-badge">OODA Loop</span>
+                                                    <span class="tech-tag-badge">ESP32 FreeRTOS</span>
+                                                    <span class="tech-tag-badge">MQTT TLS</span>
+                                                    <span class="tech-tag-badge">Multi-Agent Mesh</span>
+                                                    <span class="tech-tag-badge">Energy Shaving</span>
+                                                    <span class="tech-tag-badge">Chart.js</span>
+                                                </div>
+                                                <div class="project-links-row">
+                                                    <a href="https://github.com/TechnicalSusanta" target="_blank"
+                                                        class="project-action-link live-btn"><i
+                                                            class="fas fa-play-circle"></i>
+                                                        live_simulation</a>
+                                                    <a href="https://github.com/TechnicalSusanta" target="_blank"
+                                                        class="project-action-link"><i class="fab fa-github"></i>
+                                                        source_code</a>
+                                                </div>
+                                            </div>
+
+                                            <!-- Project Flagship 2: AgriSense AI -->
+                                            <div class="project-card">
+                                                <div class="project-title-row">
+                                                    <h3 class="project-title">IoT based Autonomous Precision Agriculture
+                                                    </h3>
+                                                    <span class="project-sub">agritech</span>
+                                                </div>
+                                                <p class="project-desc">
+                                                    An IoT-based smart agriculture system that uses connected sensors to
+                                                    monitor
+                                                    soil and environmental conditions, helping farmers make better
+                                                    decisions about
+                                                    irrigation and crop management.
+                                                </p>
+                                                <div class="project-tech-tags">
+                                                    <span class="tech-tag-badge">LoRaWAN 868MHz</span>
+                                                    <span class="tech-tag-badge">Soil Moisture Monitoring</span>
+                                                    <span class="tech-tag-badge">Temperature & Humidity</span>
+                                                    <span class="tech-tag-badge">PH Monitoring</span>
+                                                    <span class="tech-tag-badge">Water Level Monitoring</span>
+                                                    <span class="tech-tag-badge">FAO-56 ET₀</span>
+                                                </div>
+                                                <div class="project-links-row">
+                                                    <a href="https://github.com/TechnicalSusanta" target="_blank"
+                                                        class="project-action-link live-btn"><i
+                                                            class="fas fa-play-circle"></i>
+                                                        live_simulation</a>
+                                                    <a href="https://github.com/TechnicalSusanta" target="_blank"
+                                                        class="project-action-link"><i class="fab fa-github"></i>
+                                                        source_code</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <!-- TAB 5: ACHIEVEMENTS.TXT -->
+                                <article class="section-view" id="view-achievements">
+                                    <div class="achievements-container">
+                                        <!-- Left: Awards List -->
+                                        <div class="achievements-list-col scrollbar-white">
+
+                                            <a href="ISRO ROBOTICS CHALLANGE.pdf" target="_blank"
+                                                rel="noopener noreferrer"
+                                                class="achievement-box featured-box achievement-box-link"
+                                                aria-label="Open the ISRO Robotics Challenge PDF">
+                                                <div class="achievement-tag text-teal">[ISRO Space Robotics Qualifier]
+                                                </div>
+                                                <h3 class="achievement-title achievement-title-link">IRoC-U 2026
+                                                    &mdash; ISRO Robotics Challenge</h3>
+                                                <p class="achievement-desc">
+                                                    Qualified for India's premier space robotics challenge orchestrated
+                                                    by the
+                                                    Indian Space Research Organisation (ISRO), designing autonomous
+                                                    planetary
+                                                    exploration Swarm UAV System with advanced SLAM and obstacle
+                                                    mitigation.
+                                                </p>
+                                            </a>
+
+                                            <a href="BIRLA INDUSTRIAL TECHNOLOGICAL MUSEUM 2026.pdf" target="_blank"
+                                                rel="noopener noreferrer" class="achievement-box achievement-box-link"
+                                                aria-label="Open the Best Applied Technology Project Award PDF">
+                                                <div class="achievement-tag text-peach">[Best Applied Technology
+                                                    Project Award]</div>
+                                                <h3 class="achievement-title achievement-title-link">BIRLA INDUSTRIAL
+                                                    TECHNOLOGICAL
+                                                    MUSEUM SCIENCE & ENGINEERING FAIR 2026</h3>
+                                                <p class="achievement-desc">
+                                                    Awarded at the Eastern India Science &amp; Engineering Fair 2026,
+                                                    Birla
+                                                    Industrial &amp; Technological Museum (BITM), National Council of
+                                                    Science
+                                                    Museums.
+                                                </p>
+                                            </a>
+
+                                            <a href="ISRO HACKATHON.pdf" target="_blank" rel="noopener noreferrer"
+                                                class="achievement-box featured-box achievement-box-link"
+                                                aria-label="Open the Bharatiya Antariksh Hackathon 2025 PDF">
+                                                <div class="achievement-tag text-teal">[ISRO]</div>
+                                                <h3 class="achievement-title achievement-title-link">BHARATYA ANTARIKSH
+                                                    HACKATHON 2025</h3>
+                                                <p class="achievement-desc">
+                                                    Participated in the Bharatiya Antariksh Hackathon 2025, developing
+                                                    innovative
+                                                    solutions focused on space technology, exploration, and real-world
+                                                    engineering
+                                                    challenges.
+                                                </p>
+                                            </a>
+
+                                            <a href="SMART INDIA HACKTHON CERTIFICAT.pdf" target="_blank"
+                                                rel="noopener noreferrer"
+                                                class="achievement-box featured-box achievement-box-link"
+                                                aria-label="Open the Smart India Hackathon 2024 PDF">
+                                                <div class="achievement-tag text-pink">[National Level Winner]</div>
+                                                <h3 class="achievement-title achievement-title-link">Smart India
+                                                    Hackathon 2024</h3>
+                                                <p class="achievement-desc">
+                                                    Crowned national winners at India's biggest hackathon organized by
+                                                    the Ministry
+                                                    of Education &amp; AICTE, Government of India. Developed an
+                                                    innovative
+                                                    autonomous technology solution addressing high-impact national
+                                                    challenges.
+                                                </p>
+                                            </a>
+
+                                            <a href="INNOVATIVE HARDWAE MODEL MAKING COMPITION 2024 &amp; 2025.pdf"
+                                                target="_blank" rel="noopener noreferrer"
+                                                class="achievement-box achievement-box-link"
+                                                aria-label="Open the Best Innovative Idea Award PDF">
+                                                <div class="achievement-tag text-green">[Best Innovative Idea Award]
+                                                </div>
+                                                <h3 class="achievement-title achievement-title-link">
+                                                    Innovative Hardware Model Making Competition (2024 &amp; 2025)</h3>
+                                                <p class="achievement-desc">
+                                                    Honored in consecutive years at the State-Level Innovative Hardware
+                                                    Model-Making
+                                                    Competition for developing innovative Medicine Drone Systems and an
+                                                    Autonomous
+                                                    Mecanum-Wheel Car.
+                                                </p>
+                                            </a>
+
+                                            <a href="ELECTRONICS INNOVATION 8.pdf" target="_blank"
+                                                rel="noopener noreferrer" class="achievement-box achievement-box-link"
+                                                aria-label="Open the Innovative Electronics 8.0 Best Jury Award PDF">
+                                                <div class="achievement-tag text-muted">[Best Jury Award]</div>
+                                                <h3 class="achievement-title achievement-title-link">
+                                                    Electronics Innovative 8.0 (2023)</h3>
+                                                <p class="achievement-desc">
+                                                    Exploring healthcare automation, intelligent cleaning systems,
+                                                    medical
+                                                    traceability,
+                                                    patient safety, smart monitoring and innovative technologies for
+                                                    better
+                                                    healthcare services.
+                                                </p>
+                                            </a>
+
+                                        </div>
+
+                                        <!-- Right: Endorsements -->
+                                        <aside class="achievements-quotes-col scrollbar-white"
+                                            aria-labelledby="endorsements-heading">
+                                            <h3 class="endorsements-heading" id="endorsements-heading">$ cat
+                                                endorsements.log</h3>
+
+                                            <div class="endorsements-stage">
+                                                <figure class="endorsement-card endorsement-card--right">
+                                                    <blockquote class="endorsement-bubble">
+                                                        <span class="endorsement-mark endorsement-mark--open"
+                                                            aria-hidden="true">...</span>
+                                                        <p class="endorsement-copy">
+                                                            Qualified for the ISRO Robotics Challenge (IRoC-U) 2026 for
+                                                            developing
+                                                            an autonomous multi-drone swarming system with 3D LiDAR SLAM
+                                                            for
+                                                            GPS-denied navigation, AprilTag-based precision landing,
+                                                            autonomous
+                                                            charging, aerial surveying, and object detection.
+                                                        </p>
+                                                        <span class="endorsement-mark endorsement-mark--close"
+                                                            aria-hidden="true">...</span>
+                                                    </blockquote>
+                                                    <figcaption class="endorsement-author">
+                                                        <span class="endorsement-author-name">ISRO</span>
+                                                        <span class="endorsement-author-role">IRoC-U 2026</span>
+                                                    </figcaption>
+                                                </figure>
+
+                                                <figure class="endorsement-card endorsement-card--left">
+                                                    <blockquote class="endorsement-bubble">
+                                                        <span class="endorsement-mark endorsement-mark--open"
+                                                            aria-hidden="true">...</span>
+                                                        <p class="endorsement-copy">
+                                                            Smart India Hackathon (SIH) 2024 for developing a
+                                                            Drone-Based
+                                                            Intelligent ET Sensing System and Irrigation Water Use
+                                                            Accounting System
+                                                            for Irrigation Commands, enabling data-driven irrigation and
+                                                            efficient
+                                                            water management.
+                                                            Susanta demonstrated deep proficiency in ROS architecture
+                                                            and real-time
+                                                            sensor processing during robotics lab sessions.
+                                                        </p>
+                                                        <span class="endorsement-mark endorsement-mark--close"
+                                                            aria-hidden="true">...</span>
+                                                    </blockquote>
+                                                    <figcaption class="endorsement-author">
+                                                        <span class="endorsement-author-name">SIH</span>
+                                                        <span class="endorsement-author-role">SIH 2024</span>
+                                                    </figcaption>
+                                                </figure>
+                                            </div>
+                                        </aside>
+                                    </div>
+                                </article>
+
+                                <!-- TAB 6: CONTACT.YML -->
+                                <article class="section-view" id="view-contact">
+                                    <div class="contact-container">
+                                        <!-- Left: Formatted YAML -->
+                                        <div class="contact-yaml-col scrollbar-white">
+                                            <div
+                                                style="margin-bottom: 0.6rem; color: var(--accent-teal); font-weight: 600;">
+                                                # contact_details.yml
+                                            </div>
+                                            <div class="yaml-code-block">
+                                                <p><span class="yaml-key">developer</span><span
+                                                        class="yaml-punct">:</span> <span class="yaml-str">"Susanta
+                                                        Gorai"</span></p>
+                                                <p><span class="yaml-key">role</span><span class="yaml-punct">:</span>
+                                                    <span class="yaml-str">"Robotics &amp; Autonomous Systems
+                                                        Engineer"</span></p>
+                                                <p><span class="yaml-key">location</span><span
+                                                        class="yaml-punct">:</span> <span class="yaml-str">"Asansol,
+                                                        West Bengal, India"</span></p>
+                                                <br />
+                                                <p><span class="yaml-key">"directs"</span><span
+                                                        class="yaml-punct">:{</span></p>
+                                                <p style="padding-left: 1.2rem;"><span
+                                                        class="yaml-key">"email"</span><span
+                                                        class="yaml-punct">:</span><a
+                                                        href="mailto:susantagorai037@gmail.com" target="_blank"
+                                                        class="yaml-str json-link">"susantagorai037@gmail.com"</a>
+                                                </p>
+                                                <p style="padding-left: 1.2rem;"><span
+                                                        class="yaml-key">"phone"</span><span
+                                                        class="yaml-punct">:</span><a href="tel:+917548090165"
+                                                        target="_blank" class="yaml-str json-link">"+917548090165"</a>
+                                                </p>
+                                                <p style="padding-left: 1.2rem;"><span class="yaml-punct">}</span>
+                                                </p>
+                                                <br />
+                                                <p><span class="yaml-key">"links"</span><span
+                                                        class="yaml-punct">:{</span></p>
+                                                <p style="padding-left: 1.2rem;"><span
+                                                        class="yaml-key">"github"</span><span
+                                                        class="yaml-punct">:</span> <a
+                                                        href="https://github.com/TechnicalSusanta" target="_blank"
+                                                        class="yaml-str json-link">"github.com/TechnicalSusanta"</a>
+                                                </p>
+                                                <p style="padding-left: 1.2rem;"><span
+                                                        class="yaml-key">"linkedin"</span><span
+                                                        class="yaml-punct">:</span> <a
+                                                        href="https://www.linkedin.com/in/susanta-gorai-1ab300218/"
+                                                        target="_blank"
+                                                        class="yaml-str json-link">"linkedin.com/in/susanta-gorai-1ab300218/"</a>
+                                                </p>
+                                                <p style="padding-left: 1.2rem;"><span
+                                                        class="yaml-key">"resume"</span><span
+                                                        class="yaml-punct">:</span> <a href="Susanta_GoraiResume.pdf"
+                                                        target="_blank"
+                                                        class="yaml-str json-link">"Susanta_GoraiResume.pdf"</a>
+
+                                                </p>
+                                                <p style="padding-left: 1.2rem;"><span class="yaml-punct">}</span>
+                                                </p>
+
+                                                <br />
+                                                <p><span class="yaml-key">status</span><span class="yaml-punct">:</span>
+                                                    <span class="yaml-str">"AI/ML &amp; Robotics Automation"</span></p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Right: Interactive CLI Sender -->
+                                        <div class="contact-interactive-col">
+                                            <div>
+                                                <div
+                                                    style="font-size: 0.9rem; color: var(--accent-peach); font-weight: 600; margin-bottom: 0.8rem;">
+                                                    <span class="text-pink">$</span> mail --to susanta
+                                                </div>
+
+                                                <form id="contact-cli-form">
+                                                    <div class="cli-form-group">
+                                                        <label class="cli-form-label"><span
+                                                                class="text-pink">&gt;</span>
+                                                            name:</label>
+                                                        <input type="text" id="form-name" class="cli-form-input"
+                                                            placeholder="e.g. Alex Turing" required />
+                                                    </div>
+
+                                                    <div class="cli-form-group">
+                                                        <label class="cli-form-label"><span
+                                                                class="text-pink">&gt;</span>
+                                                            email:</label>
+                                                        <input type="email" id="form-email" class="cli-form-input"
+                                                            placeholder="alex@domain.com" required />
+                                                    </div>
+
+                                                    <div class="cli-form-group">
+                                                        <label class="cli-form-label"><span
+                                                                class="text-pink">&gt;</span>
+                                                            message:</label>
+                                                        <textarea id="form-message" class="cli-form-textarea" rows="4"
+                                                            placeholder="Let's build autonomous robotics together..."
+                                                            required></textarea>
+                                                    </div>
+
+                                                    <button type="submit" class="cli-submit-btn">
+                                                        <span class="text-pink">$</span> send_message <i
+                                                            class="fas fa-paper-plane"></i>
+                                                    </button>
+                                                    <div id="form-status" class="form-status-msg"></div>
+                                                </form>
+                                            </div>
+
+                                            <div
+                                                style="font-size: 0.75rem; color: var(--text-muted); border-top: 1px solid var(--border-color); padding-top: 0.6rem;">
+                                                Direct email transmission via standard mailto protocol. No third-party
+                                                trackers.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+
+                            </div>
+                        </section>
+
+                        <!-- Desktop Footer -->
+                        <footer class="desktop-footer">
+                            <div class="footer-shortcuts">
+                                <span><span class="text-peach">&lt;&lt;</span><span
+                                        class="text-pink"> / </span><span class="text-peach">&gt;&gt;</span> <span
+                                        class="text-green">Switch section</span></span>
+                                <span><span class="text-pink">&lt;</span><span class="text-peach">1 - 6</span><span
+                                        class="text-pink">&gt;</span> <span class="text-green">Jump to section</span></span>
+                                <span><span class="text-pink">&lt;</span><span class="text-peach">Tab</span><span
+                                        class="text-pink">&gt;</span> <span class="text-green">Next section</span></span>
+                                <button class="sound-toggle-btn" id="sound-toggle-desktop"
+                                    title="Toggle mechanical keyboard audio">[SOUND: ON]</button>
+                                <button class="cli-toggle-btn" id="cli-modal-toggle-desktop"
+                                    title="Open interactive CLI terminal">[TERMINAL: `~`]</button>
+                            </div>
+                            <div class="footer-credit">
+                                <span>developed by</span>
+                                <span class="text-teal font-semibold">susanta_gorai</span>
+                            </div>
+                        </footer>
+                    </div>
+    </main>
+
+    <!-- ========================================================================
+       MOBILE TERMINAL SHELL (< 1035px)
+       ======================================================================== -->
+    <div id="mobile-shell">
+        <div class="mobile-header">
+            <span class="text-pink">user</span><span class="text-cream">@</span><span
+                class="text-peach">susanta</span><span class="text-cream"> ~</span>
+        </div>
+
+        <div class="mobile-body">
+            <!-- Vertical Tab Bar -->
+            <nav class="mobile-sidebar" aria-label="Mobile navigation">
+                <button class="mobile-tab-btn active" data-tab="about"><span>/about</span></button>
+                <button class="mobile-tab-btn" data-tab="career"><span>/career</span></button>
+                <button class="mobile-tab-btn" data-tab="skills"><span>/skills</span></button>
+                <button class="mobile-tab-btn" data-tab="projects"><span>/projects</span></button>
+                <button class="mobile-tab-btn" data-tab="achievements"><span>/honors</span></button>
+                <button class="mobile-tab-btn" data-tab="contact"><span>/contact</span></button>
+            </nav>
+
+            <!-- Main mobile content -->
+            <div class="mobile-content-area">
+                <div class="mobile-cmd-header" id="mobile-active-cmd">
+                    <span class="text-peach"><span class="text-pink">$</span>cat</span> <span
+                        class="text-cream">about.txt</span>
+                </div>
+                <div class="mobile-content-scroll scrollbar-white" id="mobile-content-container">
+                    <!-- Dynamically loaded with active section on mobile -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Footer with peach arrows -->
+        <div class="mobile-footer">
+            <div style="font-size: 0.75rem; color: var(--text-muted);">
+                <div><span class="text-pink">&lt;</span><span class="text-peach">nav</span><span
+                        class="text-pink">&gt;</span> <span class="text-green">Switch section</span></div>
+                <div>developed by <span class="text-teal">susanta_gorai</span></div>
+            </div>
+            <div class="mobile-nav-buttons">
+                <button class="mobile-nav-btn" id="mobile-prev-btn" aria-label="Previous section">&lt;</button>
+                <button class="mobile-nav-btn" id="mobile-next-btn" aria-label="Next section">&gt;</button>
+            </div>
+        </div>
     </div>
 
-    <!-- ====== NAVBAR ====== -->
-    <nav class="navbar" id="navbar">
-        <div class="container nav-container">
-            <a href="#" class="logo">Susanta<span>Gorai</span></a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#achievements">Achievements</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-
-            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </nav>
-
-    <!-- ====== HERO SECTION ====== -->
-    <section class="hero" id="home">
-        <div class="container hero-container">
-            <div class="hero-content">
-                <span class="hero-badge"><i class="fas fa-microchip"></i> Meachine Learning & Autonomous Systems</span>
-                <h1>I'm <span class="gradient-text">Susanta Gorai</span>,<br>AI/ML & Robotics Automation <br>Systems Engineer</h1>
-                <p>Passionate about building autonomous robots, intelligent drones and IoT systems. Experienced in ROS, LiDAR SLAM, Computer Vision and PCB design with a focus on real-world engineering solutions.</p>
-                <div class="hero-buttons">
-                    <a href="Susanta_GoraiResume.pdf" target="_blank" download="Susanta_GoraiResume.pdf" class="btn btn-primary"><i class="fas fa-file-pdf"></i> Download Resume</a>
-                    <a href="#projects" class="btn btn-outline">Explore Projects <i class="fas fa-rocket"></i></a>
+    <!-- ========================================================================
+       EASTER EGG INTERACTIVE TERMINAL MODAL (`~` key or button)
+       ======================================================================== -->
+    <div id="terminal-modal" role="dialog" aria-modal="true" aria-label="Interactive Terminal">
+        <div class="modal-terminal-box">
+            <div class="modal-terminal-header">
+                <div>
+                    <span class="data-dot dot-red" style="margin-right: 4px;"></span>
+                    <span class="data-dot dot-yellow" style="margin-right: 4px;"></span>
+                    <span class="data-dot dot-green" style="margin-right: 8px;"></span>
+                    <span class="text-peach">susanta@terminal-cli: ~ (bash)</span>
                 </div>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-number" data-target="6">6</span><span class="stat-plus">+</span>
-                        <span class="stat-label">Major Projects</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number" data-target="6">6</span><span class="stat-plus">+</span>
-                        <span class="stat-label">Awards Won</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number" data-target="2">2</span><span class="stat-plus">+</span>
-                        <span class="stat-label">Work Experiences</span>
-                    </div>
-                </div>
+                <button id="close-terminal-btn"
+                    style="color: var(--accent-pink); font-weight: bold; cursor: pointer;">[x]</button>
             </div>
-            <div class="hero-image">
-                <div class="hero-img-wrapper">
-                    <div class="hero-img-bg"></div>
-                    <img src="profile.jpg" alt="Susanta Gorai - Smart India Hackathon Winner" style="object-position: top center;">
-                    <div class="floating-badge badge-fast">
-                        <i class="fas fa-trophy"></i>
-                        <div>
-                            <strong>SIH 2024</strong>
-                            <span>Winner</span>
-                        </div>
-                    </div>
-                    <div class="floating-badge badge-satisfaction">
-                        <i class="fas fa-satellite"></i>
-                        <div>
-                            <strong>IRoC-U 2026</strong>
-                            <span>ISRO Qualifier</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="modal-terminal-body scrollbar-white" id="cli-output">
+                <div class="cli-log-line text-green">Welcome to Susanta's Interactive Terminal v2.4.0</div>
+                <div class="cli-log-line text-muted">Type <span class="text-peach">'help'</span> to see available
+                    commands or <span class="text-peach">'exit'</span> to close.</div>
+                <div class="cli-log-line text-muted">Try: <span class="text-teal">about</span>, <span
+                        class="text-teal">skills</span>, <span class="text-teal">projects</span>, <span
+                        class="text-teal">contact</span>, <span class="text-teal">whoami</span>, <span
+                        class="text-teal">clear</span></div>
+            </div>
+            <div class="modal-terminal-input-row">
+                <span class="terminal-prompt-sym">susanta$</span>
+                <input type="text" id="cli-text-input" class="terminal-real-input" autocomplete="off" spellcheck="false"
+                    placeholder="type a command..." />
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- ====== ABOUT SECTION ====== -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">About Me</span>
-                <h2>Know More <span class="gradient-text">About Me</span></h2>
-                <p>An aspiring robotics engineer with hands-on experience in drones, embedded systems, and intelligent automation</p>
-            </div>
-            <div class="about-content">
-                <div class="about-image">
-                    <div class="about-img-wrapper">
-                        <img src="profile.jpg" alt="Susanta Gorai" style="object-position: top center;">
-                    </div>
-                </div>
-                <div class="about-info">
-                    <div class="about-loader">
-                        <div class="loader-circle"></div>
-                    </div>
-                    <h3>I'm Susanta Gorai, a <span class="gradient-text">AI/ML & Robotics Automation Systems Engineer</span></h3>
-                    <p>Currently pursuing B.Tech in Computer Science Engineering at Durgapur Institute of Advanced Technology and Management (2023-2027). I have technical exposure at CSIR-CMERI, where I worked on innovative robotics and embedded systems projects, gaining hands-on experience in ROS and Underwater Autonomous Vehicles.</p>
-                    <p>I also served as a Robotics Instructor at Asansol Ramakrishna Mission School, conducting training sessions and designing hands-on projects to enhance students' understanding of robotics and automation.</p>
-
-                    <div class="skills-bars">
-                        <div class="skill-bar">
-                            <div class="skill-info">
-                                <span>Robotics & Embedded Systems</span>
-                                <span class="skill-percent">95%</span>
-                            </div>
-                            <div class="skill-track">
-                                <div class="skill-fill" data-width="95" style="--bar-gradient: linear-gradient(90deg, #ff6b6b, #ee5a24, #f39c12, #e84393, #fd79a8)"></div>
-                            </div>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-info">
-                                <span>IoT & Sensor Integration</span>
-                                <span class="skill-percent">92%</span>
-                            </div>
-                            <div class="skill-track">
-                                <div class="skill-fill" data-width="92" style="--bar-gradient: linear-gradient(90deg, #0652DD, #1e90ff, #6c5ce7, #e84393, #fd79a8)"></div>
-                            </div>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-info">
-                                <span>Machine Learning & Computer Vision</span>
-                                <span class="skill-percent">88%</span>
-                            </div>
-                            <div class="skill-track">
-                                <div class="skill-fill" data-width="88" style="--bar-gradient: linear-gradient(90deg, #00b894, #00cec9, #0984e3, #6c5ce7)"></div>
-                            </div>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-info">
-                                <span>Web Development</span>
-                                <span class="skill-percent">80%</span>
-                            </div>
-                            <div class="skill-track">
-                                <div class="skill-fill" data-width="80" style="--bar-gradient: linear-gradient(90deg, #2d3436, #636e72, #b2bec3, #dfe6e9)"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="about-buttons">
-                        <a href="Susanta_GoraiResume.pdf" target="_blank" download="Susanta_GoraiResume.pdf" class="btn btn-primary"><i class="fas fa-download"></i> Download CV</a>
-                        <a href="#projects" class="btn btn-outline"><i class="fas fa-rocket"></i> View Projects</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====== SKILLS SECTION ====== -->
-    <section class="services" id="skills">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">Technical Skills</span>
-                <h2>My <span class="gradient-text">Expertise</span></h2>
-                <p>A diverse skill set spanning hardware, software, and intelligent systems</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3>Programming</h3>
-                    <p>Python, C++, C — building robust algorithms for robotics control, computer vision pipelines and system-level programming.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">C++</span>
-                        <span class="tech-tag">C</span>
-                    </div>
-                </div>
-                <div class="service-card featured">
-                    <div class="service-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3>Robotics & Embedded</h3>
-                    <p>ROS, Arduino, STM32, ESP32, Teensy, Raspberry Pi, Jetson — designing and building autonomous robotic systems.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">ROS</span>
-                        <span class="tech-tag">Arduino</span>
-                        <span class="tech-tag">STM32</span>
-                        <span class="tech-tag">Jetson</span>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3>ML & Computer Vision</h3>
-                    <p>OpenCV, MediaPipe, TensorFlow, PyTorch — implementing image processing and deep learning for real-time perception.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">OpenCV</span>
-                        <span class="tech-tag">TensorFlow</span>
-                        <span class="tech-tag">PyTorch</span>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-wifi"></i>
-                    </div>
-                    <h3>Internet of Things</h3>
-                    <p>Sensor integration, wireless communication, MQTT — building connected smart systems for automation and monitoring.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">MQTT</span>
-                        <span class="tech-tag">ESP32</span>
-                        <span class="tech-tag">Sensors</span>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-drafting-compass"></i>
-                    </div>
-                    <h3>PCB & 3D Design</h3>
-                    <p>Custom PCB design for flight controllers and IoT systems. 3D modeling with SolidWorks for mechanical components.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">PCB Design</span>
-                        <span class="tech-tag">SolidWorks</span>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-globe"></i>
-                    </div>
-                    <h3>Web Development</h3>
-                    <p>HTML, CSS, JavaScript, Django, MySQL — building web interfaces and backend systems for IoT dashboards.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Django</span>
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">MySQL</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====== PROJECTS SECTION ====== -->
-    <section class="portfolio" id="projects">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">Projects</span>
-                <h2>My <span class="gradient-text">Projects</span></h2>
-                <p>Real-world engineering projects spanning drones, robotics, IoT, and embedded systems</p>
-            </div>
-            <div class="portfolio-filters">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="drone">Drones</button>
-                <button class="filter-btn" data-filter="robotics">Robotics</button>
-                <button class="filter-btn" data-filter="iot">IoT</button>
-                <button class="filter-btn" data-filter="embedded">Embedded</button>
-            </div>
-            <div class="portfolio-grid">
-                <!-- Project 1 -->
-                <div class="portfolio-card" data-category="drone">
-                    <div class="portfolio-img">
-                        <img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=600&h=400&fit=crop" alt="GPS-Less Drone Swarming">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-actions">
-                                <a href="https://github.com/TechnicalSusanta" target="_blank" class="portfolio-action-btn" title="View Code on GitHub"><i class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-category">Drone Systems</span>
-                        <h3>GPS-Less Drone Swarming & 3D Mapping</h3>
-                        <p>Autonomous swarming drone using 3D LiDAR SLAM for real-time mapping, localization, and navigation. AprilTag-based vision for precision landing without GPS.</p>
-                    </div>
-                </div>
-                <!-- Project 2 -->
-                <div class="portfolio-card" data-category="drone">
-                    <div class="portfolio-img">
-                        <img src="https://images.unsplash.com/photo-1586771107445-b3e7eb9e1b64?w=600&h=400&fit=crop" alt="ET Sensing">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-actions">
-                                <a href="https://github.com/TechnicalSusanta" target="_blank" class="portfolio-action-btn" title="View Code on GitHub"><i class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-category">Drone + IoT</span>
-                        <h3>Intelligent ET Sensing & Irrigation System</h3>
-                        <p>Drone-based intelligent ET sensing system and irrigation water use accounting system for automated irrigation commands.</p>
-                    </div>
-                </div>
-                <!-- Project 3 -->
-                <div class="portfolio-card" data-category="embedded">
-                    <div class="portfolio-img">
-                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop" alt="Flight Controller PCB">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-actions">
-                                <a href="https://github.com/TechnicalSusanta" target="_blank" class="portfolio-action-btn" title="View Code on GitHub"><i class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-category">Embedded Systems</span>
-                        <h3>STM32 Flight Controller PCB</h3>
-                        <p>Designed and developed an STM32-based flight controller PCB for real-time drone control and sensor integration.</p>
-                    </div>
-                </div>
-                <!-- Project 4 -->
-                <div class="portfolio-card" data-category="robotics">
-                    <div class="portfolio-img">
-                        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&h=400&fit=crop" alt="Cleaning Robot">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-actions">
-                                <a href="https://github.com/TechnicalSusanta" target="_blank" class="portfolio-action-btn" title="View Code on GitHub"><i class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-category">Robotics</span>
-                        <h3>LiDAR Autonomous Cleaning Robot</h3>
-                        <p>Autonomous cleaning robot using LiDAR, SLAM and ultrasonic sensors for intelligent mapping and navigation.</p>
-                    </div>
-                </div>
-                <!-- Project 5 -->
-                <div class="portfolio-card" data-category="iot">
-                    <div class="portfolio-img">
-                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&h=400&fit=crop" alt="Smart Home IoT">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-actions">
-                                <a href="https://github.com/TechnicalSusanta" target="_blank" class="portfolio-action-btn" title="View Code on GitHub"><i class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-category">IoT Systems</span>
-                        <h3>IoT Smart Home & Agriculture System</h3>
-                        <p>IoT system with custom PCB integration for voice-controlled home automation and smart agriculture monitoring.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====== EXPERIENCE SECTION ====== -->
-    <section class="experience" id="experience">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">Experience</span>
-                <h2>Work <span class="gradient-text">Experience</span></h2>
-                <p>Hands-on experience in research labs and educational institutions</p>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Technical Exposure</h3>
-                            <span class="timeline-org">CSIR-CMERI</span>
-                        </div>
-                        <ul class="timeline-list">
-                            <li>Worked on innovative projects related to robotics and embedded systems</li>
-                            <li>Gained hands-on experience in ROS and Underwater Autonomous and Remote Operated Vehicle</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Robotics Instructor</h3>
-                            <span class="timeline-org">Asansol Ramakrishna Mission School</span>
-                        </div>
-                        <ul class="timeline-list">
-                            <li>Conducted robotics training sessions for students, covering fundamental concepts</li>
-                            <li>Designed hands-on projects to enhance student understanding of robotics and automation</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====== ACHIEVEMENTS SECTION ====== -->
-    <section class="achievements-section" id="achievements">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">Achievements</span>
-                <h2>Awards & <span class="gradient-text">Recognition</span></h2>
-                <p>Recognitions earned through innovative engineering and competitive excellence</p>
-            </div>
-            <div class="achievements-grid">
-                <div class="achievement-card">
-                    <div class="achievement-icon"><i class="fas fa-satellite"></i></div>
-                    <div class="achievement-info">
-                        <h3>IRoC-U 2026 Qualifier</h3>
-                        <p>ISRO Robotics Challenge — qualified for India's premier space robotics competition by ISRO.</p>
-                    </div>
-                </div>
-                <div class="achievement-card">
-                    <div class="achievement-icon"><i class="fas fa-award"></i></div>
-                    <div class="achievement-info">
-                        <h3>Best Applied Technology Project Award</h3>
-                        <p>Science & Engineering Fair 2026, Birla Industrial & Technological Museum.</p>
-                    </div>
-                </div>
-                <div class="achievement-card featured-achievement">
-                    <div class="achievement-icon"><i class="fas fa-trophy"></i></div>
-                    <div class="achievement-info">
-                        <h3>Winner — Smart India Hackathon 2024</h3>
-                        <p>Won India's largest hackathon organized by the Government of India.</p>
-                    </div>
-                </div>
-                <div class="achievement-card">
-                    <div class="achievement-icon"><i class="fas fa-lightbulb"></i></div>
-                    <div class="achievement-info">
-                        <h3>Best Innovative Idea Award</h3>
-                        <p>Innovative Hardware Model Making Competition (2024 & 2025).</p>
-                    </div>
-                </div>
-                <div class="achievement-card">
-                    <div class="achievement-icon"><i class="fas fa-medal"></i></div>
-                    <div class="achievement-info">
-                        <h3>Best Jury Award</h3>
-                        <p>Innovative Electronics Innovation 8.0 (2023).</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====== EDUCATION SECTION ====== -->
-    <section class="education-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">Education</span>
-                <h2>My <span class="gradient-text">Education</span></h2>
-            </div>
-            <div class="education-card">
-                <div class="education-icon"><i class="fas fa-university"></i></div>
-                <div class="education-info">
-                    <h3>Durgapur Institute of Advanced Technology and Management</h3>
-                    <p class="education-location"><i class="fas fa-map-marker-alt"></i> Durgapur, Rajbandh, West Bengal</p>
-                    <p class="education-degree">Bachelor of Technology in Computer Science Engineering (Ongoing)</p>
-                    <div class="education-details">
-                        <span class="education-year"><i class="fas fa-calendar-alt"></i> 2023 - 2027</span>
-                        <span class="education-gpa"><i class="fas fa-star"></i> CGPA: 7.20</span>
-                    </div>
-                    <p class="education-courses"><strong>Coursework:</strong> Computer Network, Digital-Analog, Data Structure Algorithm, Operating System</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====== CONTACT SECTION ====== -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">Contact</span>
-                <h2>Let's Work <span class="gradient-text">Together</span></h2>
-                <p>Have a robotics or embedded systems project? Let's build something amazing</p>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                        <div>
-                            <h4>Email</h4>
-                            <p>susantagorai037@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
-                        <div>
-                            <h4>Phone</h4>
-                            <p>+91 7548090165</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-                        <div>
-                            <h4>Location</h4>
-                            <p>Asansol, West Bengal, India</p>
-                        </div>
-                    </div>
-                    <div class="contact-socials">
-                        <a href="https://github.com/TechnicalSusanta" target="_blank" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/susanta-gorai-1ab300218/" target="_blank" class="social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="mailto:susantagorai037@gmail.com" class="social-link" title="Email"><i class="fas fa-envelope"></i></a>
-                    </div>
-                </div>
-                <form class="contact-form" id="contactForm">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" placeholder="your@email.com" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" placeholder="Project Discussion" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" rows="5" placeholder="Tell me about your project..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-full">
-                        Send Message <i class="fas fa-paper-plane"></i>
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====== FOOTER ====== -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <a href="#" class="logo">Susanta<span>Gorai</span></a>
-                    <p>Building the future with robotics, drones, and intelligent embedded systems.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#skills">Skills</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#experience">Experience</a></li>
-                        <li><a href="#achievements">Achievements</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Expertise</h4>
-                    <ul>
-                        <li><a href="#skills">Robotics & ROS</a></li>
-                        <li><a href="#skills">Drone Systems</a></li>
-                        <li><a href="#skills">Embedded & IoT</a></li>
-                        <li><a href="#skills">Computer Vision</a></li>
-                        <li><a href="#skills">PCB Design</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Susanta Gorai. All rights reserved.</p>
-                <a href="#home" class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
-            </div>
-        </div>
-    </footer>
-
+    <!-- Main JavaScript Logic -->
     <script src="script.js"></script>
 </body>
+
 </html>
